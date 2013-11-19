@@ -36,9 +36,11 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "BonjourRecord.h"
 
+#include "qtbonjour_export.h"
+
 class QSocketNotifier;
 
-class BonjourServiceRegister : public QObject {
+class QTBONJOUR_EXPORT BonjourServiceRegister : public QObject {
 		Q_OBJECT
 	public:
 		BonjourServiceRegister(QObject *parent = 0);
