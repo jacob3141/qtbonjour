@@ -28,21 +28,21 @@ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef BONJOUR_SERVICE_RESOLVER_H_
-#define BONJOUR_SERVICE_RESOLVER_H_
+#pragma once
 
+// Own includes
+#include "bonjourrecord.h"
+
+// libdnssd
+#include <dns_sd.h>
+
+// Qt includes
 #include <QtCore/QMap>
 #include <QtCore/QObject>
 
-#include <dns_sd.h>
-
-#include "BonjourRecord.h"
-
-#include "qtbonjour_export.h"
-
 class QSocketNotifier;
 
-class QTBONJOUR_EXPORT BonjourServiceResolver : public QObject {
+class BonjourServiceResolver : public QObject {
 		Q_OBJECT
 	protected:
 		struct ResolveRecord {
@@ -72,5 +72,3 @@ class QTBONJOUR_EXPORT BonjourServiceResolver : public QObject {
 		        const char *fullName, const char *hosttarget, quint16 port,
 		        quint16 txtLen, const char *txtRecord, void *context);
 };
-
-#endif //BONJOUR_SERVICE_RESOLVER_H_

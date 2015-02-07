@@ -27,20 +27,19 @@ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef BONJOUR_SERVICE_BROWSER_H_
-#define BONJOUR_SERVICE_BROWSER_H_
+#pragma once
 
+// Own includes
+#include "bonjourrecord.h"
+
+// libdnssd
 #include <dns_sd.h>
 
+// Qt includes
 #include <QtCore/QObject>
 
-#include "BonjourRecord.h"
-
-#include "qtbonjour_export.h"
-
 class QSocketNotifier;
-
-class QTBONJOUR_EXPORT BonjourServiceBrowser : public QObject {
+class BonjourServiceBrowser : public QObject {
 		Q_OBJECT
 	public:
 		BonjourServiceBrowser(QObject *parent = 0);
@@ -69,5 +68,3 @@ class QTBONJOUR_EXPORT BonjourServiceBrowser : public QObject {
 		QList<BonjourRecord> bonjourRecords;
 		QString browsingType;
 };
-
-#endif //BONJOUR_SERVICE_BROWSER_H_

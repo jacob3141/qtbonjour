@@ -26,9 +26,9 @@ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef BONJOUR_RECORD_H_
-#define BONJOUR_RECORD_H_
+#pragma once
 
+// Qt includes
 #include <QtCore/QMetaType>
 #include <QtCore/QString>
 
@@ -53,5 +53,3 @@ class BonjourRecord {
 };
 
 Q_DECLARE_METATYPE(BonjourRecord)
-
-#endif

@@ -27,20 +27,19 @@ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef BONJOUR_SERVICE_REGISTER_H_
-#define BONJOUR_SERVICE_REGISTER_H_
+#pragma once
 
-// Bonjour flags
+// Own includes
+#include "bonjourrecord.h"
+
+// libdnssd
 #include <dns_sd.h>
+
+// Qt includes
 #include <QtCore/QObject>
 
-#include "BonjourRecord.h"
-
-#include "qtbonjour_export.h"
-
 class QSocketNotifier;
-
-class QTBONJOUR_EXPORT BonjourServiceRegister : public QObject {
+class BonjourServiceRegister : public QObject {
 		Q_OBJECT
 	public:
 		BonjourServiceRegister(QObject *parent = 0);
@@ -67,5 +66,3 @@ class QTBONJOUR_EXPORT BonjourServiceRegister : public QObject {
 		QSocketNotifier *bonjourSocket;
 		BonjourRecord finalRecord;
 };
-
-#endif //BONJOUR_SERVICE_REGISTER_H_
